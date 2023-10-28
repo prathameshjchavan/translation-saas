@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { AspectRatio } from "./aspect-ratio";
+import { AspectRatio } from "./ui/aspect-ratio";
 import Image from "next/image";
 import LogoImage from "@logos/black.svg";
 
