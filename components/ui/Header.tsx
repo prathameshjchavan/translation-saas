@@ -28,7 +28,7 @@ const Header = async () => {
 
 					<DarkModeToggle />
 
-					<UserButton />
+					<UserButton session={session} />
 				</div>
 			</nav>
 
