@@ -6,6 +6,7 @@ import { authOptions } from "@/auth";
 import { Fragment } from "react";
 import Link from "next/link";
 import { MessagesSquareIcon } from "lucide-react";
+import CreateChatButton from "./CreateChatButton";
 
 const Header = async () => {
 	const session = await getServerSession(authOptions);
@@ -21,6 +22,7 @@ const Header = async () => {
 							<Link href="/chat" prefetch={false}>
 								<MessagesSquareIcon className="text-black dark:text-white" />
 							</Link>
+							<CreateChatButton />
 						</Fragment>
 					) : (
 						<Link href="/pricing">Pricing</Link>
