@@ -7,6 +7,7 @@ import { Fragment } from "react";
 import Link from "next/link";
 import { MessagesSquareIcon } from "lucide-react";
 import CreateChatButton from "./CreateChatButton";
+import UpgradeBanner from "./UpgradeBanner";
 
 const Header = async () => {
 	const session = await getServerSession(authOptions);
@@ -34,7 +35,7 @@ const Header = async () => {
 				</div>
 			</nav>
 
-			{/* Upgrade banenr */}
+			<UpgradeBanner />
 		</header>
 	);
 };
