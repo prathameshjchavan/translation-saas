@@ -16,6 +16,7 @@ import { useSubscriptionStore } from "@/store/store";
 import LoadingSpinner from "./LoadingSpinner";
 import { Fragment } from "react";
 import { StarIcon } from "lucide-react";
+import ManageAccountButton from "./ManageAccountButton";
 
 const UserButton = ({ session }: { session: Session | null }) => {
 	const subscription = useSubscriptionStore((state) => state.subscription);
@@ -51,8 +52,7 @@ const UserButton = ({ session }: { session: Session | null }) => {
 						</DropdownMenuLabel>
 						<DropdownMenuSeparator />
 						<DropdownMenuItem>
-							Manage
-							{/* <ManageAccountButton /> */}
+							<ManageAccountButton />
 						</DropdownMenuItem>
 					</Fragment>
 				)}
