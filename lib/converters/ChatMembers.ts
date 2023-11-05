@@ -53,7 +53,7 @@ export const addChatRef = (chatId: string, userId: string) =>
 		chatMembersConverter
 	);
 
-export const chatMembersRef = (chatId: string, userId: string) =>
+export const chatMembersRef = (chatId: string) =>
 	collection(db, "chats", chatId, "members").withConverter(
 		chatMembersConverter
 	);
