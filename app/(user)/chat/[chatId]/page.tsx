@@ -3,7 +3,13 @@ import ChatInput from "@/components/ChatInput";
 import { getServerSession } from "next-auth";
 import { Fragment } from "react";
 
-const ChatPage = async () => {
+type Props = {
+	params: {
+		chatId: string;
+	};
+};
+
+const ChatPage = async ({ params: { chatId } }: Props) => {
 	const session = await getServerSession(authOptions);
 
 	return (
@@ -15,7 +21,7 @@ const ChatPage = async () => {
 			{/* ChatMessages */}
 
 			{/* ChatInput */}
-			<ChatInput chatId="abc" />
+			<ChatInput chatId={chatId} />
 		</Fragment>
 	);
 };
