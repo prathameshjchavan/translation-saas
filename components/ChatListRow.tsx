@@ -7,11 +7,13 @@ import { useRouter } from "next/navigation";
 import UserAvatar from "./UserAvatar";
 import { getServerSession } from "next-auth";
 import { useSession } from "next-auth/react";
+import { useLanguageStore } from "@/store/store";
 
 const ChatListRow = ({ chatId }: { chatId: string }) => {
 	const [messages, loading, error] = useCollectionData<Message>(
 		limitedSortedMessagesRef(chatId)
 	);
+	const language = useLanguageStore((state) => state.language);
 	const router = useRouter();
 	const { data: session } = useSession();
 
@@ -36,7 +38,7 @@ const ChatListRow = ({ chatId }: { chatId: string }) => {
 						[message.user.name || session?.user.name].toString().split(" ")[0]}
 				</p>
 				<p className="text-gray-400 line-clamp-1">
-					{message?.translated?.en || "Get the conversation started..."}
+					{message?.translated?.[language] || "Get the conversation started..."}
 				</p>
 			</div>
 			<div className="text-xs text-gray-400 text-right">
