@@ -13,7 +13,7 @@ const ChatList = async () => {
 
 	const initialChats = chatSnapshot.docs.map((doc) => ({
 		...doc.data(),
-		// timestamp: null,
+		timestamp: null,
 	}));
 
 	return <ChatListRows initialChats={initialChats} />;
