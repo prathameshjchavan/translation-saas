@@ -38,7 +38,10 @@ const ChatInput = ({ chatId }: { chatId: string }) => {
 	});
 
 	const onSubmit = async (values: z.infer<typeof formSchema>) => {
-		if (!values.input.length || !session?.user) return;
+		const inputCopy = values.input.trim();
+		form.reset();
+
+		if (!inputCopy.length || !session?.user) return;
 
 		// Check if user is pro and limit them creating a new chat
 		const messages = (await getDocs(limitedMessagesRef(chatId))).docs.map(
@@ -70,12 +73,10 @@ const ChatInput = ({ chatId }: { chatId: string }) => {
 		};
 
 		addDoc(messagesRef(chatId), {
-			input: values.input,
+			input: inputCopy,
 			timestamp: serverTimestamp(),
 			user: userToStore,
 		});
-
-		form.reset();
 	};
 
 	return (
