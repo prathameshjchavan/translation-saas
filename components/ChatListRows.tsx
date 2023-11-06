@@ -25,7 +25,7 @@ const ChatListRows = ({ initialChats }: { initialChats: ChatMembers[] }) => {
 				<MessageSquare className="h-10 w-10" />
 				<h1 className="text-5xl font-extralight">Welcome!</h1>
 				<h2 className="pb-10">
-					Lets get you started by creating your first chat!
+					Let&apos;s get you started by creating your first chat!
 				</h2>
 				<CreateChatButton isLarge />
 			</div>
