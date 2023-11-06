@@ -6,7 +6,7 @@ const RegisterPage = async () => {
 	const session = await getServerSession(authOptions);
 
 	return (
-		<div className="isolate h-full overflow-hidden bg-gray-900 pb-40">
+		<div className="isolate h-full overflow-y-scroll bg-gray-900 pb-40">
 			<div className="mx-auto max-w-7xl px-6 pb-12 pt-16 text-white text-center lg:px-8">
 				<div className="mx-auto max-w-4xl">
 					<p className="mt-2 text-4xl font-bold tracking-tight sm:text-5xl">
