@@ -28,6 +28,7 @@ import { PlusCircle, PlusCircleIcon } from "lucide-react";
 import { useSubscriptionStore } from "@/store/store";
 import { ToastAction } from "./ui/toast";
 import { useRouter } from "next/navigation";
+import ShareLink from "./ShareLink";
 
 const formSchema = z.object({
 	email: z.string().email("Please enter a valid email address"),
@@ -181,7 +182,11 @@ const InviteUser = ({ chatId }: { chatId: string }) => {
 					</DialogContent>
 				</Dialog>
 
-				{/* <ShareLink isOpen={openInviteLink} setIsOpen={setOpenInviteLink} chatId={chatId} /> */}
+				<ShareLink
+					isOpen={openInviteLink}
+					setIsOpen={setOpenInviteLink}
+					chatId={chatId}
+				/>
 			</Fragment>
 		)
 	);
