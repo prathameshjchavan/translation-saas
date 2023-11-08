@@ -5,7 +5,6 @@ import { useCollectionData } from "react-firebase-hooks/firestore";
 import { Skeleton } from "./ui/skeleton";
 import { useRouter } from "next/navigation";
 import UserAvatar from "./UserAvatar";
-import { getServerSession } from "next-auth";
 import { useSession } from "next-auth/react";
 import { useLanguageStore } from "@/store/store";
 
